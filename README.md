@@ -1,4 +1,4 @@
-# Hermes
+# Vox
 
 **A secure, real-time voice support agent for IT and field-service teams, with adaptive vector + graph retrieval.**
 
