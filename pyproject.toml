@@ -1,7 +1,7 @@
 [project]
 name = "vox"
 version = "0.1.0"
-description = "Add your description here"
+description = "The project is the implementation of a demo of an IT call center agent."
 readme = "README.md"
 authors = [
     { name = "Anna Merlou", email = "anna.merlou@satorianalytics.com" }
@@ -13,8 +13,6 @@ dependencies = [
     "uvicorn[standard]>=0.51.0",
 ]
 
-[project.scripts]
-vox = "vox:main"
 
 [build-system]
 requires = ["uv_build>=0.11.32,<0.12.0"]
