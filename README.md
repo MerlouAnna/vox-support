@@ -2,7 +2,7 @@
 
 **A secure, real-time voice support agent for IT and field-service teams, with adaptive vector + graph retrieval.**
 
-Hermes answers support calls by phone or browser: it listens, decides whether a
+Vox answers support calls by phone or browser: it listens, decides whether a
 question needs a fast factual lookup or multi-hop reasoning, retrieves grounded
 answers from the knowledge base, speaks them back with citations, and files a
 summarised ticket after the call.
