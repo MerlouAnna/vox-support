@@ -1,0 +1,2 @@
+* text=auto eol=lf
+# Normalise text files to LF in the repository and so diffs stay reviewable across checkouts
