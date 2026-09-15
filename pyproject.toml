@@ -20,6 +20,19 @@ build-backend = "uv_build"
 
 [dependency-groups]
 dev = [
-    "httpx>=0.28.1",
+    "httpx2>=2.13.0",
     "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
 ]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+
+[tool.coverage.run]
+source = ["src/vox"] # check the coverage only in the code
+branch = true 
+
+[tool.coverage.report]
+show_missing = true # show the missing lines
+fail_under = 85 # the % under which teh tests are failing
