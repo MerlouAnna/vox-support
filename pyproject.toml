@@ -37,7 +37,7 @@ branch = true
 
 [tool.coverage.report]
 show_missing = true # show the missing lines
-fail_under = 85 # the % under which teh tests are failing
+fail_under = 85 # the % under which the tests are failing
 
 [tool.ruff]
 target-version = "py312"
