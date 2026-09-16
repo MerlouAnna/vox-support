@@ -2,7 +2,9 @@ from functools import lru_cache  # decorator to cache the result of a function c
 from typing import Literal
 
 from pydantic_settings import (
-    BaseSettings,  # BaseSettings is a BaseModel that has the capability to read settings from environment variables and other sources
+    # BaseSettings is a BaseModel that has the capability
+    # to read settings from environment variables and other sources
+    BaseSettings,
     SettingsConfigDict,  # configuration class for Pydantic settings models
 )
 
@@ -14,7 +16,7 @@ class Settings(BaseSettings):
 
     model_config = SettingsConfigDict(
         env_file=".env",  # the path to the environment file containing the settings
-        env_prefix="VOX_",  # the prefix for environment variables related to the settings
+        env_prefix="VOX_",  # the prefix for env variables related to the settings
         extra="forbid",  # forbid extra fields not defined in the settings model
     )
 

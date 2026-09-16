@@ -1,0 +1,30 @@
+name: CI
+
+on: # check in two phases
+  pull_request: # 1. in PR - part to be merged
+  push: # 2. double check after merge 
+    branches: [master]
+
+permissions:
+  contents: read # least priv - it can only read the code
+
+concurrency: # if repush during run it restarts 
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest # which Github machinee to run on
+    steps:
+      - uses: actions/checkout@v5 # brings the code to runner
+
+      - uses: astral-sh/setup-uv@v6 # intall uv
+        with:
+          enable-cache: true
+
+      - run: uv sync --locked # set up the env in runner and checks that uv.lock is aligned with pyproject.toml 
+
+      - run: uv run ruff format --check .
+      - run: uv run ruff check .
+      - run: uv run mypy
+      - run: uv run pytest --cov
