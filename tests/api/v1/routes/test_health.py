@@ -11,6 +11,6 @@ def test_health_returns_ok(client: TestClient) -> None:
     assert response.json() == {"status": "OK"}
 
 
-def test_are_hidden_in_production() -> None:
+def test_docs_are_hidden_in_production() -> None:
     app = create_app(Settings(_env_file=None, environment="production"))
     assert app.docs_url is None
